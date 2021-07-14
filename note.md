@@ -33,12 +33,6 @@ h4 {color:purple; text-align: center;}
     </body>
 </html>
 ```
-
-效果图：
-
-![结果](https://github.com/fakechoco/CSSlearning/blob/main/Day7/day7.png)
-
-
 ---
 
 #### Day8 July14
