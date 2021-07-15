@@ -185,5 +185,108 @@ font-variant:small-caps;
 
 ---
 
+#### Day9
+
+ ##### CSS装饰链接
+
+链接的四种状态：
+
+* 访问前(link)
+* 访问过(visited)
+* 鼠标指定时(hover)
+* 点击时(active)
+
+例如:
+
+``` css
+a:link {color:#000000;}      /* 未访问链接*/
+a:visited {color:#00FF00;}  /* 已访问链接 */
+a:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
+a:active {color:#0000FF;}  /* 鼠标点击时 */
+```
+
+在设置多个状态的样式时候：
+
+hover必须在link,visited后方
+
+active必须在hover后方
+
+
+
+设置下划线，颜色，字体加粗和背景颜色：与普通文本一致
+
+用text-decoration等元素装饰
+
+
+
+创建链接框：
+
+``` css
+a:link,a:visited
+{
+	display:block;
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:#98bf21;
+	width:120px;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+}
+a:hover,a:active
+{
+	background-color:#7A991A;
+}
+```
+
+display:后方的元素决定了链接框的形状
+
+然后用width设置大小 padding设置边框到文本间的距离
+
+
+
+##### CSS装饰列表
+
+设置有序列表的排序基准：
+
+``` css
+ol{list-style-type:upper-alpha}
+/* 设置基准位小写字母*/
+```
+
+设置无序列表前缀的样式：
+
+``` css
+ul{list-style-type: square;}
+/* 设置为正方形 */
+```
+
+设置无序列表前缀为指定图像：
+
+``` css
+ul
+{
+    list-style-image:url()
+}
+/* 此处图片作为标记的设置，在不同浏览器中不一定显示效果一致 */
+/* 解决浏览器兼容问题*/
+ul.s
+{
+    list-style-type:none;
+    margin: 0px;
+    padding: 0px;
+}
+/* 设置无序列表为无标记(去掉默认的前缀“.”，设置填充，边距)
+ul.s  li
+{
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 20px;
+}
+/* 设置图像，不重复平铺，图像位置（左0px,上下5px) padding-left 属性把文本置于列表中 */
+
+```
+
 
 

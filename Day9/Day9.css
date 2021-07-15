@@ -1,0 +1,48 @@
+a:link
+{
+    color:black;background-color: burlywood;text-decoration:none;
+    display: block;width: 6em;text-align:center;
+}
+a:visited
+{
+    color:purple;background-color: chartreuse;text-decoration: none;
+    display: block;width: 6em;text-align:center;
+}
+a:hover
+{
+    color:blue;background-color: whitesmoke;text-decoration: none;
+    display: block;width: 6em;text-align:center;
+}
+a:active
+{
+    color:chartreuse;background-color: cadetblue;text-decoration: none;
+    display: block;width:6em;text-align:center;
+}
+h3.d{
+    color:red;
+    font-weight: bold; 
+}
+ul
+{
+    list-style-image: url(https://www.runoob.com/try/demo_source/sqpurple.gif);
+}
+/* 此处图片作为标记的设置，在不同浏览器中不一定显示效果一致 */
+ol
+{
+    list-style-type:lower-alpha;
+    list-style-position: inside;
+}
+/* 解决浏览器兼容问题*/
+ul.s
+{
+    list-style-type:none;
+    margin: 0px;
+    padding: 0px;
+}
+ul.s  li
+{
+    background-image: url(https://www.runoob.com/try/demo_source/sqpurple.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 20px;
+}
