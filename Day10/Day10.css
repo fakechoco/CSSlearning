@@ -1,0 +1,29 @@
+table
+{
+    border-collapse: collapse;
+  
+}
+/* 让表格的边框和表内单元格边框合并 */
+table,td,th
+{
+    border: 1px solid black;
+}
+td
+{
+	height:50px;
+	vertical-align:baseline;
+}
+/* vertical-align:设置垂直位置 */
+/* 边框设置*/
+p{border-style: solid;border-color: red;}
+p.none {border-style:none;}
+p.dotted {border-style:dotted;}
+p.dashed {border-style:dashed;}
+p.solid {border-style:solid;}
+p.double {border-style:double;}
+p.groove {border-style:groove;}
+p.ridge {border-style:ridge;}
+p.inset {border-style:inset;}
+p.outset {border-style:outset;}
+p.hidden {border-style:hidden;}
+p.a{border-top-color: blue;}

@@ -185,7 +185,7 @@ font-variant:small-caps;
 
 ---
 
-#### Day9
+#### Day9 July.15
 
  ##### CSS装饰链接
 
@@ -288,5 +288,123 @@ ul.s  li
 
 ```
 
+---
 
+#### Day10 July.17
+
+##### CSS表格
+
+​	给表格设置边框，并且合并表格与单元格的边框：
+
+``` css
+table
+{
+    border-collapse: collapse;
+  
+}
+/* 让表格的边框和表内单元格边框合并 */
+table,td,th
+{
+    border: 1px solid black;
+}
+```
+
+表格的垂直对齐：
+
+``` css
+td
+{
+	height:50px;
+	vertical-align:baseline;
+}
+/* vertical-align:设置垂直位置  此处设置到基准线上*/
+```
+
+字体对齐方式在前面提过（text-align)
+
+单元格大小也用height,width设置
+
+控制边框间距：
+
+间距(padding)指的是边框到内容的距离 边距(spacing)指的是边框与边框之间的距离
+
+``` css
+td,th{padding:2px;}/*设置间距*/
+```
+
+##### CSS盒子模型：
+
+所有HTML元素可以看作盒子，CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容
+
+从外到内的结构分别为：
+
+- **Margin(外边距)** - 清除边框外的区域，外边距是透明的。
+- **Border(边框)** - 围绕在内边距和内容外的边框。
+- **Padding(内边距)** - 清除内容周围的区域，内边距是透明的。
+- **Content(内容)** - 盒子的内容，显示文本和图像。
+
+最终元素的总宽度计算公式：
+
+总元素宽度=宽度+左外边距+右外边距+左边框+右边框+左内边距+右内边距
+
+元素的总高度最终计算公式：
+
+总元素高度=高度+顶部外边距+底部外边距+上边框+下边框+上内边距+下内边距
+
+#####  CSS边框
+
+定义边框样式：<kbd>border-style</kbd>
+
+| none（默认） | 定义无边框。                                                 |
+| ------------ | ------------------------------------------------------------ |
+| hidden       | 与 "none" 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。 |
+| dotted       | 定义点状边框。在大多数浏览器中呈现为实线。                   |
+| dashed       | 定义虚线。在大多数浏览器中呈现为实线。                       |
+| solid        | 定义实线。                                                   |
+| double       | 定义双线。双线的宽度等于 border-width 的值。                 |
+| groove       | 定义 3D 凹槽边框。其效果取决于 border-color 的值。           |
+| ridge        | 定义 3D 垄状边框。其效果取决于 border-color 的值。           |
+| inset        | 定义 3D 嵌入边框。其效果取决于 border-color 的值。           |
+| outset       | 定义 3D 突出 边框。其效果取决于 border-color 的值。          |
+
+边框的四条边也可以单独设置格式：
+
+``` css
+p{ border-top-style:dotted;border-right-style:solid;border-bottom-style:dotted; border-left-style:solid;}
+```
+
+ 也可以简写：（border-style后可以有1-4个样式）
+
+``` css
+border-style:dotted solid double dashed; /*对应上，右，下，左边框（从上开始，顺时针）*/
+border-style:dotted solid double;/*上边框为dotted 左右为solid 下为double*/
+border-style:dotted solid;/*上下为dotted 左右为solid*/
+border-style：double /*上下左右都是double*/
+```
+
+边框颜色：<kbd>border-color</kbd>
+
+``` css
+p{border-style: none;border-color: red;}/*单独设置颜色无效，必须连同边框样式一起设置*/
+```
+
+边框的所有属性可以一起简写：
+
+``` css
+border:5px solid red;
+```
+
+对应的三个值为：
+
+- border-width
+- border-style 
+- border-color
+
+单独设置某一个边框的颜色
+
+``` css
+p 
+{border-style:solid;border-top-color:#ff0000;}
+/*设置上边框为红色，其他边框保持默认不变*/
+```
 
