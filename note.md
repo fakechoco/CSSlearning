@@ -494,10 +494,10 @@ h1,h2,p
 
 嵌套选择器：
 
-- **p{ }**: 为所有 **p** 元素指定一个样式。
-- .marked{ }**: 为所有 **class="marked"** 的元素指定一个样式。
-- **.marked p{ }**: 为所有 **class="marked"** 元素内的 **p** 元素指定一个样式。
-- p.marked{ }**: 为所有 **class="marked"** 的 **p** 元素指定一个样式。
+- p{ }: 为所有"p"元素指定一个样式。
+- .marked{ }: 为所有 class="marked" 的元素指定一个样式。
+- .marked p{ }: 为所有 class="marked" 元素内的 "p" 元素指定一个样式。
+- p.marked{ }: 为所有 class="marked" 的 "p"元素指定一个样式。
 
 例如：给段落设置为居中，字体蓝色；所有marked类的元素背景颜色设置为红色；所有marked类的段落字体设置成白色；marked类的段落设置下划线：
 
