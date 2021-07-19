@@ -1,0 +1,21 @@
+p.o
+{
+    border: 1px solid blue;
+    outline: 2px dotted red;
+}
+p.m
+{
+    color: blueviolet;
+    margin-left: 20px;
+}
+p.p
+{
+    background-color: green;
+    padding-top: 10px;
+    text-align: center;
+}
+p.p1
+{
+    background-color: green;
+    text-align: center;
+}

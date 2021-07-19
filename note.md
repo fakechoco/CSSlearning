@@ -408,3 +408,115 @@ p
 /*设置上边框为红色，其他边框保持默认不变*/
 ```
 
+---
+
+#### Day11 July.19
+
+##### CSS轮廓
+
+轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+
+轮廓不会改变元素宽度/长度
+
+轮廓有三个属性：样式(style),颜色(color),宽度(width)
+
+设置轮廓 ：
+
+``` css
+p.a
+{
+    outline: 2px dotted red;
+}
+```
+
+或者单独设置：
+
+``` css
+p.a
+{
+	outline-color:red;
+    outline-style:dotted;
+    outline-width:2px;    /*  此处亦可用预设值，比如:thick  */
+}
+```
+
+##### CSS外边距
+
+外边距(margin)定义了元素周围的空间
+
+mairgin的属性：宽度(width)
+
+为段落设置左外边距：
+
+``` css
+p.m
+{
+    color: blueviolet;
+    margin-left: 20px;
+}
+```
+
+上/下/左/右的外边距都可以单独设置（在一处代码中）
+
+``` css
+margin:
+```
+
+margin后可有1-4个值，不同数量的值对应的设置详见上方<kbd>CSS边框</kbd>
+
+##### CSS内边距(填充)
+
+CSS padding(填充)定义元素边框与元素内容之间的空间，即上下左右的内边距。
+
+内边距和外边距一样，属性值为宽度(width)
+
+``` css
+p
+{
+    padding-left:50px;
+}
+```
+
+和外边距一样也可以单独设置上下左右（在一处代码中）：格式与外边距一致
+
+##### CSS分组与嵌套
+
+为了使得代码更简洁，可以分组设置元素(使用逗号）：
+
+设置一级/二级标题以及段落的颜色为绿色
+
+``` css
+h1,h2,p
+{
+    color:green;
+}
+```
+
+嵌套选择器：
+
+- **p{ }**: 为所有 **p** 元素指定一个样式。
+- .marked{ }**: 为所有 **class="marked"** 的元素指定一个样式。
+- **.marked p{ }**: 为所有 **class="marked"** 元素内的 **p** 元素指定一个样式。
+- p.marked{ }**: 为所有 **class="marked"** 的 **p** 元素指定一个样式。
+
+例如：给段落设置为居中，字体蓝色；所有marked类的元素背景颜色设置为红色；所有marked类的段落字体设置成白色；marked类的段落设置下划线：
+
+``` css
+p
+{
+    color:blue;
+    text-align:center;
+}
+.marked
+{
+    background-color:red;
+}
+.marked p
+{
+    color:white;
+}
+p.marked{
+    text-decoration:underline;
+}
+```
+
