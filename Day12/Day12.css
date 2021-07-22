@@ -1,0 +1,21 @@
+p.m
+{
+    height: 50px;
+    width: 50px;
+}
+p.n{display: none;background-color: blue;}
+p.h{visibility:hidden;background-color: blue;}
+table
+{
+    border-collapse: collapse;
+  
+}
+table, th, td 
+{
+    border: 1px solid black;
+}
+
+tr.h
+{
+    visibility: collapse;
+}
