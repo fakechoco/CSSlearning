@@ -615,9 +615,105 @@ z-index属性指定了一个元素的堆叠顺序，一个元素可以有正数�
 
 如果两个定位元素重叠，没有指定z - index，最后定位在HTML代码中的元素将被显示在最前面
 
+---
+
+#### Day13 July.23
+
+##### CSS Overflow
+
+当元素内的内容过大，导致溢出时，用overflow属性设置
+
+overflow属性有以下值：
+
+| 属性名  | 涵义                                                     |
+| ------- | -------------------------------------------------------- |
+| visible | 默认值。内容不会被修剪，会呈现在元素框之外。             |
+| hidden  | 内容会被修剪，并且其余内容是不可见的。                   |
+| scroll  | 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 |
+| auto    | 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。 |
+
+##### CSS Float
+
+float属性会让元素向左/由移动，并且影响周围元素的排列，通常用于图像
+
+``` css
+img{float:right;} /* 向右浮动 */
+```
+
+浮动的时候，往往会改变周边元素的排列，要避免这个情况，要使用clear属性
+
+``` css
+.c{clear:both;}/* 两边不能出现浮动元素 */
+```
+
+##### CSS对齐
+
+要对齐一个元素(若没设置width，或将其设置为100%，对齐将无效)
+
+``` css
+.a {margin:auto;width:80%;}
+```
+
+只设置文本居中对齐：text-align:center;
+
+图片居中对齐：将图片放到div中，并设置margin:auto;
 
 
 
+左右对齐：
+
+将元素右对齐：(使用绝对定位)
+
+``` css
+div{
+    position: absolute;
+    right: 0px;
+}
+```
+
+将元素右对齐：(使用浮动)
+
+``` css
+img{
+    float:right;
+}
+```
+
+如果该图片太大，在div溢出了，可在div中添加 margin:auto;来解决
 
 
+
+垂直居中：通过设置line-height 属性值和 height 属性值相等来设置 div 元素居中、
+
+``` css
+.center {
+    line-height: 200px;
+    height: 200px;
+    border: 3px solid green;
+    /* 如果还要水平居中，添加 text-align: center;  */
+}
+```
+
+也可以通过头部底部添加padding
+
+``` css
+.center {
+    padding: 70px 0;
+    /* 如果还要水平居中，添加 text-align: center;  */
+}
+```
+
+
+
+使用绝对定位和transform
+
+``` css
+.center p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/* 根据顶部和左边(对应x/y轴)移动 */
+}
+```
 
