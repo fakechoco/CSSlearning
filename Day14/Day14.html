@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="CHOKE">
+        <link rel="stylesheet" type="text/css" href="Day14.css">
+        <title>组合选择符，伪类/伪元素</title>
+    </head>
+    <body>
+        <div class="a">
+            <h4>后代选择器:</h4>
+            <p>这个段落有背景颜色</p>
+            <p>这个段落也有，因为与上面具有同样的父元素</p>
+            <span><p>这个段落的直接父元素与上面段落不一致，但是段落也在该元素内，所以颜色一致</p></span>
+        </div>
+        <div class="b">
+            <h4>子元素选择器</h4>
+            <p>这个段落有背景颜色，因为父元素被设置</p>
+            <span><p>这个段落没有背景颜色，虽然也是后代元素，但不是子元素</p></span>
+        </div>
+        <div class="c">
+            <h4>后续元素选择器：</h4>
+            <p>这个段落没有颜色</p>
+            <span><p>这个段落也没有，因为被选择</p></span>
+        </div>
+        <p>这个段落会被染色，因为这个段落是指定元素后的第一个同类元素</p>
+        <p>这个段落不会被染色，因为只选择了一个</p>
+        <div class="d">
+            <h4>后续元素选择器：</h4>
+            <p>这个段落没有颜色</p>
+            <span><p>这个段落也没有，因为被选择</p></span>
+        </div>
+        <p>这个段落会被染色，因为这个段落是指定元素后的同类元素</p>
+        <p>这个段落也会被染色，因为这个段落是指定元素后的同类元素，并且后续的所有段落都会被染色</p>
+        <p class="a"><b>此处</b>会变为红色</p>
+        <p class="b">首字符和第一行<br>会被影响</p>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+div.a p{
+    background-color: aqua;
+}
+div.b>p{
+    background-color: brown;
+}
+div.c+p{
+    background-color: chocolate;
+}
+div.d~p{
+    background-color: darkgrey;
+}
+p.a>b:first-child{
+    color:red;
+}
+p.b:first-line{color:red;}
+p.b:first-letter{font-size:150%;}
