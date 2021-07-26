@@ -779,8 +779,6 @@ p:before{content:url("pic-url");}
 p:after{content:url("pic-url");}/* 在前后都添加图片 */
 ```
 
----
-
 ##### 伪类和为元素区别：
 
 以下内容来自于[菜鸟教程笔记(此页面最下方)]([CSS 伪元素 | 菜鸟教程 (runoob.com)](https://www.runoob.com/css/css-pseudo-elements.html))
@@ -788,4 +786,92 @@ p:after{content:url("pic-url");}/* 在前后都添加图片 */
 **伪类**选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志。由于状态是动态变化的，所以一个元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和class有些类似，但它是基于文档之外的抽象，所以叫伪类。
 
 与伪类针对特殊状态的元素不同的是，**伪元素**是对元素中的特定内容进行操作，它所操作的层次比伪类更深了一层，也因此它的动态性比伪类要低得多。实际上，设计伪元素的目的就是去选取诸如元素内容第一个字（母）、第一行，选取某些内容前面或后面这种普通的选择器无法完成的工作。它控制的内容实际上和元素是相同的，但是它本身只是基于元素的抽象，并不存在于文档中，所以叫伪元素。
+
+---
+
+#### Day15 July.26
+
+ ##### CSS导航栏
+
+导航栏是用列表插入链接实现的
+
+垂直导航栏：
+
+``` css
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a
+{
+    display:block;
+    width:60px;
+}
+```
+
+链接变成了块状，所以点击文本外的区域也能触发
+
+给链接添加样式
+
+``` css
+li a:hover{
+    background-color:blue;
+    color:white;
+}
+```
+
+添加分割线(底部添加边框)
+
+```css
+li{
+     border-bottom: 1px solid #555;
+}
+```
+
+
+
+水平导航栏：
+
+① 内联方法：将li设置成内联
+
+```css
+li{
+    display:inline;
+}
+```
+
+②设置浮动：设置li的浮动
+
+``` css
+li
+{
+    float:left;
+}
+a
+{
+    display:block;
+    width:60px;
+}
+```
+
+将导航条最后一个选项放到最右边：
+
+```css
+li.last{
+    float:right;
+}
+```
+
+分割线(右边添加边框，但是最后一个元素不添加)
+
+``` css
+li:not(.last){
+    border-right: 1px solid #555;
+}
+```
+
+
+
+
 

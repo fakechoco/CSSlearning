@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+}
+ul.f{
+    list-style-type:none;
+    border: 1px solid black;
+    position: fixed;
+    height: 100%;
+    width:25%;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+}
+ul.f li a{
+    display: block;
+    padding:16px 16px;
+    color:black;
+    text-decoration: none;
+}
+ul.f li a.f{
+    background-color: blue;
+}
+ul.f li a:hover:not(.f){
+    background-color: aqua;
+}
+div.f{
+    
+    margin-left: 25%;
+    padding:0 16px;
+    overflow:scroll;
+    padding:1px 16px;
+    height:100%;
+}
+ul.s{
+    list-style-type:none;
+    border: 1px solid black;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top:0;
+}
+ul.s li{
+    float: left;
+}
+ul.s li a{
+    display: block;
+    padding:16px 16px;
+    color:black;
+    text-decoration: none;
+}
+li a.f{
+    background-color: blue;
+}
+ul.s li.last{
+    float:right;
+}
+ul.s li:not(.last) a{
+    border-right: 1px solid black;
+}
+ul.s li a:hover:not(.f){
+    background-color: aqua;
+}
