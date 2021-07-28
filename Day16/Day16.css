@@ -1,0 +1,93 @@
+body{text-align: center;}
+.menu{
+    position: relative;
+    display: inline-block;
+}
+.dropdown{
+    display: none;
+    position: absolute;
+    max-width: 160px;
+    margin: 0;
+    padding:0 16px;
+    background-color: chartreuse;
+    left: 0;
+    
+}
+.menu:hover .dropdown{
+    display: block;
+}
+.dropdown a{
+    text-decoration: none;
+    color:black;
+    display: block;  
+}
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+.tooltip .text1 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    left:105%;
+    top:-5px;
+    z-index: 1;
+}
+.tooltip:hover .text1 {
+    visibility: visible;
+}
+.tooltip .text2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    right:105%;
+    top:-5px;
+    z-index: 1;
+}
+.tooltip:hover .text2 {
+    visibility: visible;
+}
+.tooltip .text3 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 100%;
+    margin-left: -60px;
+    left: 50%;
+    z-index: 1;
+}
+.tooltip:hover .text3 {
+    visibility: visible;
+}
+.tooltip .text4 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    top: 100%;
+    margin-left: -60px;
+    left: 50%;
+    z-index: 1;
+}
+.tooltip:hover .text4 {
+    visibility: visible;
+}

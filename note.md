@@ -871,7 +871,120 @@ li:not(.last){
 }
 ```
 
+---
+
+#### Day16 July.28
+
+##### CSS下拉菜单
+
+设置一个鼠标指定时现实的下拉菜单：原理是设置元素的：hover
+
+让菜单在元素未被指定时不显示。指定时显示
+
+``` css
+.menu{
+    position: relative;
+    display: inline;
+}
+.dropdown{
+    display: none;
+    position: absolute;
+    max-width: 160px;
+    margin: 0;
+    padding:0 16px;
+    background-color: chartreuse;
+}
+.menu:hover .dropdown{
+    display: block;
+}
+```
+
+若想设置给用户选择的链接，设置<a>即可
+
+``` css
+.dropdown a{
+    text-decoration: none;
+    color:black;
+    display: block;  
+}
+```
+
+对齐：
+
+如果要被指定的元素过于靠右，下拉菜单内容可能会溢出
+
+为了避免这种情况，可以设置成下拉菜单从右到左对齐(默认左到右)
+
+``` css
+ right: 0;
+```
+
+但设置完毕以后，靠左的元素指定时下拉菜单又会左溢出，可以添加left:0;来覆盖以上的设置
+
+##### CSS提示工具
+
+提示工具指的是，鼠标指向某个元素后会弹出提示文本，原理和下拉菜单类似
+
+设置元素的：hover 让文本在元素未被指定时不显示。指定时显示
+
+设置一个在元素右侧的提示文本(设置提示文本元素的左边距，来和被指定的元素保持距离)
 
 
 
+``` css
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+.tooltip .text1 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+/* 定位 */
+    position: absolute;
+    z-index: 1;
+    left:105%;
+    top:-5px; /* 设置了顶部的负间距，因为被指定的元素也有padding，与其数值一致*/
+}
+.tooltip:hover .text1 {
+    visibility: visible;
+}
+```
+
+设置一个在元素左侧的提示文本(设置提示文本元素的右边距，来和被指定的元素保持距离)
+
+``` css
+/* 定位 */
+    position: absolute;
+    z-index: 1;
+    left:105%;
+    top:-5px; /* 设置了顶部的负间距，因为被指定的元素也有padding，与其数值一致*/
+}
+```
+
+设置一个在元素上方的提示文本(设置提示文本元素的下边距，来和被指定的元素保持距离)
+
+``` css
+	position: absolute;
+    bottom: 100%; /* 下边距 */
+    margin-left: -60px; /* 居中对齐，这里的-60是根据被指定元素宽度一半计算的 */
+    left: 50%;
+    z-index: 1;
+```
+
+设置一个在元素下方的提示文本(设置提示文本元素的上边距，来和被指定的元素保持距离)
+
+```css
+	position: absolute;
+	top: 100%; /* 上边距 */
+	margin-left: -60px; /* 居中对齐，这里的-60是根据被指定元素宽度一半计算的 */
+	left: 50%;
+	z-index: 1;
+```
+
+---
 
