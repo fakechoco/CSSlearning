@@ -988,3 +988,22 @@ li:not(.last){
 
 ---
 
+#### Day17 August.3
+
+##### CSS图像拼合技术
+
+可以利用CSS来显示图像的一部分内容
+
+``` css
+width:46px;
+height:44px;
+background:url(img_navsprites.gif) 0 0;
+```
+
+url(img_navsprites.gif) 0 0：url:图源，后面的数字指定的是显示的位置，表示图片左作标，上作标，再预先指定显示的长款就可以确定显示的部分
+
+##### CSS透明/非透明
+
+设置图像透明度：opacity
+
+后面值为0-1，越小越透明
