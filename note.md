@@ -1000,7 +1000,7 @@ height:44px;
 background:url(img_navsprites.gif) 0 0;
 ```
 
-url(img_navsprites.gif) 0 0：url:图源，后面的数字指定的是显示的位置，表示图片左作标，上作标，再预先指定显示的长款就可以确定显示的部分
+url(img_navsprites.gif) 0 0：url:图源，后面的数字指定的是显示的位置，表示图片左作标，上作标，再预先指定显示的长宽就可以确定显示的部分
 
 ##### CSS透明/非透明
 
@@ -1013,4 +1013,142 @@ url(img_navsprites.gif) 0 0：url:图源，后面的数字指定的是显示的�
 8/31 
 
 *返校了 周末可能继续学*
+
+---
+
+#### Day18 September.3
+
+##### CSS媒体类型
+
+用 <kbd>@media</kbd>来选择页面显示的媒体类型 比如
+
+``` css
+@media screen{
+    p.a{font-size:20px;}
+}
+@media print{
+    p.a{font-size:10px;}
+}
+```
+
+将screen(电脑屏幕)类型的显示媒体的a类段落字体大小改为20像素
+
+而print(打印)改为10像素
+
+##### CSS选择器
+
+不通过class/id来选择元素,而是使用元素的特殊属性
+
+``` css
+p[title='rand']{
+    color:red;
+    font-weight: bold;
+}
+// html部分：
+<p title="rand">用title属性选择并渲染的段落</p>
+```
+
+
+
+**"value 是完整单词"** 类型的比较符号: **~=**, **|=**
+
+**"拼接字符串**" 类型的比较符号: ***=**, **^=**, **$=**
+
+**1.attribute 属性中包含 value:**　
+
+[attribute~=value] 属性中包含独立的单词为 value，例如：
+
+```
+[title~=flower]  -->  <img src="/i/eg_tulip.jpg" title="tulip flower" />
+```
+
+[attribute*=value] 属性中做字符串拆分，只要能拆出来 value 这个词就行，例如：
+
+```
+[title*=flower]   -->  <img src="/i/eg_tulip.jpg" title="ffffflowerrrrrr" />
+```
+
+**2.attribute 属性以 value 开头:**
+
+[attribute|=value] 属性中必须是完整且唯一的单词，或者以 **-** 分隔开：，例如：
+
+```
+[lang|=en]     -->  <p lang="en">  <p lang="en-us">
+```
+
+[attribute^=value] 属性的前几个字母是 value 就可以，例如：
+
+```
+[lang^=en]    -->  <p lang="ennn">
+```
+
+**3.attribute 属性以 value 结尾:**
+
+```
+[attribute$=value] 属性的后几个字母是 value 就可以，例如：
+a[src$=".pdf"]
+```
+
+
+
+##### CSS表单
+
+设置输入框的风格，并且在输入框被选时提供额外特效
+
+``` css
+input[type=text]{
+    width: 100%;
+    padding:10px 10px;
+    margin:10px 0px;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+input[type=text]:focus{
+    background-color: darkgoldenrod;
+}//在被选中时改变背景颜色
+```
+
+
+
+设置下拉菜单
+
+``` css
+select{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid black;
+    background-color: aqua;
+}
+```
+
+##### CSS计数器
+
+CSS 计数器根据规则来递增变量。
+
+CSS 计数器使用到以下几个属性：
+
+- `counter-reset` - 创建或者重置计数器
+- `counter-increment` - 递增变量
+- `content` - 插入生成的内容
+- `counter()` 或 `counters()` 函数 - 将计数器的值添加到元素
+
+``` css
+body{
+    counter-reset: section1;
+}
+h1{
+    counter-reset: section2;
+}
+h2{
+    margin-left: 16px;
+}
+h1::before{
+    counter-increment: section1;
+    content: counter(section1) ".";
+}
+h2::before{
+    counter-increment: section2;
+    content: counter(section1)"."counter(section2)":";
+}
+```
 
